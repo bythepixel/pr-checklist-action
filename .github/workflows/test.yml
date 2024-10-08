@@ -1,0 +1,16 @@
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    
+    permissions:
+      pull-requests: write
+    
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Add checklist to PR that was opened
+        uses: bythepixel/pr-checklist-action@1.0.0
