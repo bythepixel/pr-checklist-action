@@ -1,0 +1,13 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Test this action
+        uses: ./
