@@ -1,0 +1,14 @@
+name: 'PR Checklists'
+description: 'Automatically add checklists to your PR\s'
+inputs:
+  checklist_path:
+    description: 'Path of checklist location relative to the context of files available in the runner'
+    default: "./.github/checklist.md"
+    required: true
+  github_token:
+    description: "A GitHub token for API access. Defaults to {{ github.token }}."
+    default: "${{ github.token }}"
+    required: true
+runs:
+  using: 'node20'
+  main: 'index.js'
