@@ -21,5 +21,5 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
       - name: Add checklist to PR that was opened
-        uses: bythepixel/pr-checklist-action
+        uses: bythepixel/pr-checklist-action@1.0.0
 ```
