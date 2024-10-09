@@ -3,22 +3,19 @@ const fs = require("fs/promises");
 const github = require('@actions/github');
 
 const checklistPath = core.getInput('checklist_path');
-const repositoryToken = core.getInput('repository_token');
-const repositoryOwner = core.getInput('repository_owner');
-const repositoryName = core.getInput('repository_name');
+const githubToken = core.getInput('github_token');
 
-const octokit = github.getOctokit(repositoryToken);
+const octokit = github.getOctokit(githubToken);
 
 (async () => {
     try {
         const checklistContent = await fs.readFile(checklistPath, "utf8");
         octokit.rest.issues.createComment({
-            issue_number: 1,// github.context.pull_request.number,
-            owner: repositoryOwner,
-            repo: repositoryName,
+            issue_number: github.context.number,
+            owner: github.context.owner,
+            repo: github.context.repo,
             body: checklistContent,
         });
-        console.log(github.context);
     } catch (error) {
         console.log(error.message);
     }
