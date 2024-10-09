@@ -12,12 +12,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-22.04
+    
     permissions:
-      contents: read
       pull-requests: write
+    
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
       - name: Add checklist to PR that was opened
-        uses: ./
+        uses: bythepixel/pr-checklist-action
 ```
