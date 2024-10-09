@@ -4,7 +4,11 @@ inputs:
   checklist_path:
     description: 'Path of checklist location relative to the context of files available in the runner'
     default: "./.github/checklist.md"
-    required: false
+    required: true
+  repo_token:
+    description: "A GitHub token for API access. Defaults to {{ github.token }}."
+    default: "${{ github.token }}"
+    required: true
 runs:
   using: 'node20'
   main: 'index.js'

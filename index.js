@@ -3,6 +3,8 @@ const fs = require("fs/promises");
 const github = require('@actions/github');
 
 const checklistPath = core.getInput('checklist_path');
+const repoToken = core.getInput('repo_token');
+const octokit = github.getOctokit(repoToken);
 
 (async () => {
     try {
