@@ -4,6 +4,7 @@ Quickly add a checklist to a pull request!
 Create a checklist in markdown and place it under your .github folder with the name `checklist.md`
 
 Create a new workflow that is triggered whenever a pull request is created:
+
 ```yaml
 on:
   pull_request:
