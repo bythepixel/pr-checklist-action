@@ -1,5 +1,0 @@
-name: 'PR Checklists'
-description: 'Automatically add checklists to your PR\s'
-runs:
-  using: 'node20'
-  main: 'index.js'

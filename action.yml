@@ -1,5 +1,10 @@
 name: 'PR Checklists'
 description: 'Automatically add checklists to your PR\s'
+inputs:
+  checklist_path:
+    description: 'Path of checklist location relative to the context of files available in the runner'
+    default: "./.github/checklist.md"
+    required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node20'
+  main: 'index.js'
