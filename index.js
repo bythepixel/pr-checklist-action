@@ -7,12 +7,8 @@ const checklistPath = core.getInput('checklist_path');
 (async () => {
     try {
         const checklistContent = await fs.readFile(checklistPath, "utf8");
-        console.log(checklistContent);
+        console.log(github.context);
     } catch (error) {
         console.log(error.message);
     }
 })();
-
-
-
-console.log('we made it!');
