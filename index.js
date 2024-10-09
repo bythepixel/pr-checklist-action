@@ -13,16 +13,12 @@ const octokit = github.getOctokit(repositoryToken);
 
 (async () => {
     try {
-
-        console.log('owner', repositoryOwner);
-        console.log('name', repositoryName);
-        
         const checklistContent = await fs.readFile(checklistPath, "utf8");
         octokit.rest.issues.createComment({
             issue_number: 1,// github.context.pull_request.number,
-            repositoryOwner,
-            repositoryName,
-            checklistContent,
+            owner: repositoryOwner,
+            repo: repositoryName,
+            body: checklistContent,
         });
         console.log(github.context);
     } catch (error) {
