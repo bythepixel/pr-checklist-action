@@ -9,5 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-22.04
     steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
       - name: Test this action
         uses: ./
