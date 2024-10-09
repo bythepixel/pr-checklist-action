@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const fs = require("fs/promises");
 const github = require('@actions/github');
 
-const checklistPath = core.getInput('checklist_path')
+const checklistPath = core.getInput('checklist_path');
 
 (async () => {
     try {
