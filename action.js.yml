@@ -1,5 +1,5 @@
 name: 'PR Checklists'
 description: 'Automatically add checklists to your PR\s'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node20'
+  main: 'index.js'
