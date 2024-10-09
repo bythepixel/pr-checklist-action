@@ -16,9 +16,9 @@ const octokit = github.getOctokit(repositoryToken);
     try {
         const checklistContent = await fs.readFile(checklistPath, "utf8");
         octokit.rest.issues.createComment({
-            repositoryOwner,
-            repositoryName,
             issue_number: 1,// github.context.pull_request.number,
+            repositoryOwner,
+            repositoryName,           
             checklistContent,
         });
         console.log(github.context);
