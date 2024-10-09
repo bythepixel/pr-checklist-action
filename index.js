@@ -7,18 +7,21 @@ const repositoryToken = core.getInput('repository_token');
 const repositoryOwner = core.getInput('repository_owner');
 const repositoryName = core.getInput('repository_name');
 
-console.log('owner', repositoryOwner);
-console.log('name', repositoryName);
+
 
 const octokit = github.getOctokit(repositoryToken);
 
 (async () => {
     try {
+
+        console.log('owner', repositoryOwner);
+        console.log('name', repositoryName);
+        
         const checklistContent = await fs.readFile(checklistPath, "utf8");
         octokit.rest.issues.createComment({
             issue_number: 1,// github.context.pull_request.number,
             repositoryOwner,
-            repositoryName,           
+            repositoryName,
             checklistContent,
         });
         console.log(github.context);
