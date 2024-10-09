@@ -4,7 +4,15 @@ const github = require('@actions/github');
 
 const checklistPath = core.getInput('checklist_path')
 
-const checklistContent = await fs.readFile(checklistPath, "utf8");
+(async () => {
+    try {
+
+        const checklistContent = await fs.readFile(checklistPath, "utf8");
+
+    } catch (error) {
+        console.log(error.message);
+    }
+})();
 
 console.log(checklistContent);
 
