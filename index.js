@@ -7,8 +7,6 @@ const repositoryToken = core.getInput('repository_token');
 const repositoryOwner = core.getInput('repository_owner');
 const repositoryName = core.getInput('repository_name');
 
-
-
 const octokit = github.getOctokit(repositoryToken);
 
 (async () => {
