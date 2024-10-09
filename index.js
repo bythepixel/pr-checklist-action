@@ -12,7 +12,7 @@ const octokit = github.getOctokit(githubToken);
         const checklistContent = await fs.readFile(checklistPath, "utf8");
         console.o
         octokit.rest.issues.createComment({
-            issue_number: github.context.number,
+            issue_number: github.context.issue.number,
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             body: checklistContent,
